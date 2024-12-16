@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const Todoform = () => {
+export const Todoform = ({ addTodo }) => {
   const [value, setValues] = useState("");
 
   /**
@@ -9,7 +9,8 @@ export const Todoform = () => {
    */
   const handelSubmit = (e) => {
     e.preventDefault(); // to prevent page from reloading use this method
-    console.log(value);
+    addTodo(value);
+    setValues("");
   };
 
   return (
@@ -17,6 +18,7 @@ export const Todoform = () => {
       <input
         type="text"
         className="todo-input"
+        value={value}
         placeholder="What is the task Today!!"
         onChange={(e) => setValues(e.target.value)}
       />
