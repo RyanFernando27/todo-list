@@ -1,5 +1,16 @@
 import React from "react";
 
 export const Todoform = () => {
-  return <div>Todoform</div>;
+  return (
+    <form className="TodoForm">
+      <input
+        type="text"
+        className="todo-input"
+        placeholder="What is the task Today!!"
+      />
+      <button type="submit" className="todo-btn">
+        ADD
+      </button>
+    </form>
+  );
 };
